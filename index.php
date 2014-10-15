@@ -37,8 +37,11 @@ Flight::route('/day/@day:[1-5]{1}/', function($day){
     );
 
     foreach ($table as $key => $row) {
+        list($table[$key]['time_start'], $table[$key]['time_end']) = explode(' - ', Flight::get('hour_times')[$row['hour']]);
+        $table[$key]['time']       = Flight::get('hour_times')[$row['hour']];
+        $table[$key]['day_full']   = Flight::get('full_days')[$day];
+        $table[$key]['day_number'] = $day;
         ksort($table[$key]);
-        $table[$key]['time'] = Flight::get('hour_times')[$row['hour']];
     }
     Flight::json($table);
 });
