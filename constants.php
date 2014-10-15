@@ -7,6 +7,14 @@ Flight::set('days', [
     5 => 'Fr',
 ]);
 
+Flight::set('full_days', [
+    1 => 'Montag',
+    2 => 'Dienstag',
+    3 => 'Mittwoch',
+    4 => 'Donnerstag',
+    5 => 'Freitag',
+]);
+
 Flight::set('hour_times', [
     1 => '7:30 - 8:15',
     2 => '8:15 - 9:00',     // Pause 15min
