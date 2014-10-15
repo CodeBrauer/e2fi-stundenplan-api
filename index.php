@@ -57,5 +57,14 @@ Flight::route('/hour_times', function(){
     Flight::json(Flight::get('hour_times'));
 });
 
+Flight::route('/full_days', function(){
+    Flight::json(Flight::get('full_days'));
+});
+
+Flight::route('/weeks', function() {
+    $weeks = Flight::db()->select('weeks', ['start_date', 'end_date'], ['ORDER' => 'start_date ASC']);
+    Flight::json($weeks);
+});
+
 Flight::start();
 ?>
