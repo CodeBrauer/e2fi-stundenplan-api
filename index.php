@@ -9,7 +9,7 @@ Flight::route('/', function(){
     Flight::json(
         [
             'documentation_url' => 'http://e2fi-stundenplan.readme.io/',
-            'version'           => '1.0.2',
+            'version'           => '1.0.4',
             'last_update'       => date('Y-m-d H:i:s', filemtime('index.php'))
         ]
     );
