@@ -85,7 +85,9 @@ for ($i=0; $i <= 10; $i++) {
                     <?php foreach ($table_rows as $row): ?>
                         <tr>
                             <?php foreach ($row as $item): ?>
-                                <td data-day="<?= $item['day']?>" class="text-center"><?= $item['hour'].'. '.$item['subject'] ?> </td>
+                                <?php if (is_array($item)): ?>
+                                    <td data-day="<?= $item['day']?>" class="text-center"><?= $item['hour'].'. '.$item['subject'] ?> </td>
+                                <?php endif ?>
                             <?php endforeach ?>
                         </tr>
                     <?php endforeach ?>
