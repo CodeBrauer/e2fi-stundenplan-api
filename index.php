@@ -9,7 +9,7 @@ Flight::route('/', function(){
     Flight::json(
         [
             'documentation_url' => 'http://e2fi-stundenplan.readme.io/',
-            'version'           => '1.0.4',
+            'version'           => '1.0.5',
             'last_update'       => date('Y-m-d H:i:s', filemtime('index.php'))
         ]
     );
@@ -41,6 +41,7 @@ Flight::route('/day/@day:[1-5]{1}/', function($day){
         $table[$key]['time']       = Flight::get('hour_times')[$row['hour']];
         $table[$key]['day_full']   = Flight::get('full_days')[$day];
         $table[$key]['day_number'] = $day;
+        $table[$key]['room']       = ($table[$key]['room'] === NULL) ? '-' : $table[$key]['room'];
         ksort($table[$key]);
     }
     Flight::json($table);
