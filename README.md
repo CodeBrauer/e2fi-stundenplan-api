@@ -1,8 +1,16 @@
 # e2fi-stundenplan-api
 
+simple timetable API
 
-Simple Stundenplan API für die BS-Klasse
+## API docs
 
-## Beispiel App (HTML5 Webapp)
+<http://e2fi-stundenplan.readme.io/>
+
+## example app (HTML5 webapp)
 
 [timetable by marvinengelmann](https://github.com/marvinengelmann/timetable)
+
+## used frameworks/libraries
+
+* [catfan/Medoo](https://github.com/catfan/Medoo)
+* [mikecao/flight](https://github.com/mikecao/flight)
