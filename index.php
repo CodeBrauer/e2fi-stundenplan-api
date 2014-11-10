@@ -41,7 +41,7 @@ Flight::route('/day/@day:[1-5]{1}/', function($day){
         $table[$key]['time']       = Flight::get('hour_times')[$row['hour']];
         $table[$key]['day_full']   = Flight::get('full_days')[$day];
         $table[$key]['day_number'] = $day;
-        $table[$key]['room']       = ($table[$key]['room'] === NULL) ? '-' : $table[$key]['room'];
+        $table[$key]['room']       = ($table[$key]['room'] == 0 || $table[$key]['room'] == NULL) ? '-' : $table[$key]['room'];
         ksort($table[$key]);
     }
     Flight::json($table);
