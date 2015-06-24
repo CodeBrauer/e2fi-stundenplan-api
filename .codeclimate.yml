@@ -1,0 +1,4 @@
+# exclude libraries
+exclude_paths:
+ - "medoo.min.php"
+ - "flight/*"
